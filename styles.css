@@ -1,0 +1,151 @@
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.background {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #74b9ff 50%, #ffeaa7 50%);
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(to right, rgba(66, 121, 255, 0.87), rgba(255, 253, 171, 0.89));
+    color: white;
+    padding: 30px 0;
+    border-top: 15px solid rgba(0, 0, 0, 0.53);
+    text-align: center;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+}
+
+/* Animación de rotación para las imágenes del sol y copo de nieve */
+@keyframes girar {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.background::before {
+    content: '';
+    background: url('copo-nieve.png') no-repeat center center;
+    background-size: contain;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    left: 25%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.3;
+    animation: girar 10s linear infinite;
+}
+
+.background::after {
+    content: '';
+    background: url('sol.png') no-repeat center center;
+    background-size: contain;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    right: 25%;
+    top: 50%;
+    transform: translate(50%, -50%);
+    opacity: 0.3;
+    animation: girar 10s linear infinite;
+}
+
+/* Termómetro azul en la esquina inferior izquierda */
+.thermometer-blue {
+    background: url('termometro-azul.png') no-repeat center center;
+    background-size: contain;
+    width: 120px; /* Ajusta el tamaño según lo necesario */
+    height: 300px; /* Ajusta el tamaño según lo necesario */
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    opacity: 0.8;
+    z-index: 0;
+}
+
+/* Termómetro rojo en la esquina inferior derecha */
+.thermometer-red {
+    background: url('termometro-red.png') no-repeat center center;
+    background-size: contain;
+    width: 120px; /* Ajusta el tamaño según lo necesario */
+    height: 300px; /* Ajusta el tamaño según lo necesario */
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    opacity: 0.8;
+    z-index: 0;
+}
+
+
+.card {
+    position: relative;
+    border: none;
+    border-radius: 15px;
+    max-width: 600px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.38);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #000000;
+}
+
+/* Estilos para el input */
+input.form-control {
+    padding: 10px;
+    font-size: 1em;
+    text-align: center;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    color: white;
+}
+
+.btn-primary {
+    background-color: rgba(46, 122, 105, 0.92);
+    border-color: #000000;
+    font-size: 1em;
+    padding: 10px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-primary:hover {
+    background-color: rgba(255, 253, 171, 0.89);
+    border-color: rgb(0, 0, 0);
+    transform: scale(1.05); /* Efecto de agrandamiento */
+    color: black;
+}
+
+/* Resultado del texto */
+#resultado {
+    font-size: 1.2em;
+    color: #333;
+    margin-top: 15px;
+}
+
+/* Estilo del GIF */
+.giphy-embed {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
